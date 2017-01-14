@@ -1,4 +1,4 @@
- import com.dhchoi.CountdownTimer;
+import com.dhchoi.CountdownTimer;
 import com.dhchoi.CountdownTimerService;
 
 CountdownTimer timer;
