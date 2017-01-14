@@ -16,14 +16,9 @@ void draw() {
   fill(0);
   textAlign(LEFT, TOP);
 
-  // show the status of the timer
-  text("timer.isRunning():" + timer.isRunning(), 15, 10);
-  text("timer.isPaused():" + timer.isPaused(), 15, 25);
-  text("tickInterval=" + timer.getTickInterval() + ", timerDuration=" + timer.getTimerDuration(), 15, 40);
-
   // show the info of event callbacks
   textAlign(CENTER, CENTER);
-  text(timerCallbackInfo, width/2, height/2);
+  text(timerCallbackInfo, width/2, height/10);
  
 color white= color(250,250,250);
 color blue= color(0,0,250);
@@ -67,4 +62,3 @@ void keyPressed() {
       break;
   }
 }
-
