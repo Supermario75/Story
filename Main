@@ -72,3 +72,23 @@ void keyPressed() {
       break;
   }
 }
+//public class ball
+{
+  int x;
+  int y;
+  public ball(int X, int Y){
+  x=X;
+  y=Y;
+  
+ 
+  }
+  public int getX ()
+  {
+  return x;
+ 
+}
+    public int getY ()
+  {
+  return y;
+}
+}
