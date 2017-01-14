@@ -32,7 +32,7 @@ ellipse(mouseX,mouseY,5,5);
 }
 
 void onTickEvent(CountdownTimer t, long timeLeftUntilFinish) {
-  timerCallbackInfo = "[tick] - timeLeft: " + timeLeftUntilFinish + "ms";
+  timerCallbackInfo = "Time Left: " + timeLeftUntilFinish/1000 + "s";
 }
 
 void onFinishEvent(CountdownTimer t) {
