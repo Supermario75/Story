@@ -2,13 +2,17 @@ import com.dhchoi.CountdownTimer;
 import com.dhchoi.CountdownTimerService;
 
 CountdownTimer timer;
+CountdownTimer spawner;
 String timerCallbackInfo = "";
+String spawnerCallbackInfo = "";
+int ballCount = 0;
 
 void setup() {
   size(300, 300);
   background(250,250,250);
-  // create and start a timer that has been configured to trigger onTickEvents every 100 ms and run for 5000 ms
+  // create and start a timer that has been configured to trigger onTickEvents every 100 ms and run for 300000 ms
   timer = CountdownTimerService.getNewCountdownTimer(this).configure(100, 30000).start();
+  spawner = CountdownTimerService.getNewCountdownTimer(this).configure(100, 30000).start();
 }
 
 void draw() {
@@ -19,6 +23,7 @@ void draw() {
   // show the info of event callbacks
   textAlign(CENTER, CENTER);
   text(timerCallbackInfo, width/2, height/10);
+  text(spawnerCallbackInfo, width/2, height/7);
  
 color white= color(250,250,250);
 color blue= color(0,0,250);
@@ -33,10 +38,15 @@ ellipse(mouseX,mouseY,5,5);
 
 void onTickEvent(CountdownTimer t, long timeLeftUntilFinish) {
   timerCallbackInfo = "Time Left: " + timeLeftUntilFinish/1000 + "s";
+  spawnerCallbackInfo = "Balls: " + ballCount;
+  if(timeLeftUntilFinish%20 == 0){
+    ballCount = ballCount + 1;
+  } 
 }
 
-void onFinishEvent(CountdownTimer t) {
-  timerCallbackInfo = "[finished]";
+void onFinishEvent(CountdownTimer t, long timeLeftUntilFinish) {
+  timerCallbackInfo = "The game has been finished.";
+  spawnerCallbackInfo = "Balls: " + timeLeftUntilFinish/2000;
 }
 
 void keyPressed() {
