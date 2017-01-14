@@ -8,7 +8,7 @@ void setup() {
   size(300, 300);
   background(250,250,250);
   // create and start a timer that has been configured to trigger onTickEvents every 100 ms and run for 5000 ms
-  timer = CountdownTimerService.getNewCountdownTimer(this).configure(100, 5000).start();
+  timer = CountdownTimerService.getNewCountdownTimer(this).configure(100, 30000).start();
 }
 
 void draw() {
